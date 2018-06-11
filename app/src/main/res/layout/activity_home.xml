@@ -7,14 +7,38 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/relLayout1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/relLayout1">
+        android:layout_height="525dp">
 
         <include layout="@layout/toolbar" />
+    </LinearLayout>
 
-    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="560dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/frameStart"
+            android:layout_marginTop="56dp">
+
+            <fragment
+                android:id="@+id/fragment1"
+                android:name="com.wethegirls.technoethics.TrendingFragment"
+                android:layout_width="match_parent"
+                android:layout_height="560dp"
+                tools:layout="@layout/fragment_trending"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"

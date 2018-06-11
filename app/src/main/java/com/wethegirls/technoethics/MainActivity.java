@@ -30,19 +30,22 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            /*android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+            android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
             android.support.v4.app.FragmentTransaction frTransaction = fragmentManager.beginTransaction();
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.action_home:
                     frTransaction.replace(R.id.content, new HomeFragment()).commit();
                     return true;
-                case R.id.navigation_trending:
+                case R.id.action_trends:
                     frTransaction.replace(R.id.content, new TrendingFragment()).commit();
                     return true;
-                case R.id.navigation_news:
+                case R.id.action_news:
                     frTransaction.replace(R.id.content, new NewsFragment()).commit();
                     return true;
-            }*/
+                case R.id.action_podcast:
+                    frTransaction.replace(R.id.content, new NewsFragment()).commit();
+                    return true;
+            }
             return false;
         }
     };
@@ -58,12 +61,14 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Tech Ethics");
         //getSupportActionBar().setSubtitle("Home");
 
-        /*BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.default_bottom_navigation);
+        //BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction frTransaction = fragmentManager.beginTransaction();
-        frTransaction.replace(R.id.content, new HomeFragment()).commit();*/
+        frTransaction.replace(R.id.content, new TrendingFragment()).commit();
+
 
         AWSMobileClient.getInstance().initialize(this, new AWSStartupHandler() {
             @Override

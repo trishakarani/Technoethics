@@ -19,5 +19,11 @@
         android:icon="@drawable/ic_news"
         android:title="@string/title_news"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_podcast"
+        android:enabled="true"
+        android:icon="@drawable/ic_podcast_icon"
+        android:title="@string/title_podcast"
+        app:showAsAction="ifRoom" />
 
 </menu>

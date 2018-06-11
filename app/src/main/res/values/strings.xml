@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Tethics</string>
     <string name="title_home">Home</string>
+    <string name="title_company">Company</string>
     <string name="title_trends">Trending</string>
     <string name="title_news">News</string>
+    <string name="title_podcast">Podcasts</string>
     <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -18,4 +20,25 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_authenticator">AuthenticatorActivity</string>
+
+    <string-array name="Companies">
+        <item>Google</item>
+        <item>Facebook</item>
+        <item>Uber</item>
+        <item>Microsoft</item>
+        <item>Tesla</item>
+        <item>Apple</item>
+        <item>Chevron</item>
+        <item>Amazon</item>
+        <item>Salesforce</item>
+        <item>agora</item>
+        <item>Kayak</item>
+        <item>Yahoo</item>
+        <item>Flipboard</item>
+        <item>LinkedIn</item>
+        <item>Seagate</item>
+        <item>WellsFargo</item>
+        <item>Genentech</item>
+    </string-array>
+
 </resources>
