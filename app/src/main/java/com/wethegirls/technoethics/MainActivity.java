@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -33,17 +34,15 @@ public class MainActivity extends AppCompatActivity {
             android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
             android.support.v4.app.FragmentTransaction frTransaction = fragmentManager.beginTransaction();
             switch (item.getItemId()) {
-                case R.id.action_home:
-                    frTransaction.replace(R.id.content, new HomeFragment()).commit();
-                    return true;
                 case R.id.action_trends:
-                    frTransaction.replace(R.id.content, new TrendingFragment()).commit();
+                    frTransaction.replace(R.id.fragment1, NewsFragment.newInstance()).commit();
                     return true;
                 case R.id.action_news:
-                    frTransaction.replace(R.id.content, new NewsFragment()).commit();
+                    frTransaction.replace(R.id.fragment1, NewsFragment.newInstance()).commit();
                     return true;
                 case R.id.action_podcast:
-                    frTransaction.replace(R.id.content, new NewsFragment()).commit();
+                    Intent podcastActivity = new Intent(MainActivity.this, PodcastActivity.class);
+                    startActivity(podcastActivity);
                     return true;
             }
             return false;
@@ -62,12 +61,12 @@ public class MainActivity extends AppCompatActivity {
         //getSupportActionBar().setSubtitle("Home");
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.default_bottom_navigation);
-        //BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction frTransaction = fragmentManager.beginTransaction();
-        frTransaction.replace(R.id.content, new TrendingFragment()).commit();
+        frTransaction.replace(R.id.fragment1, new TrendingFragment()).commit();
 
 
         AWSMobileClient.getInstance().initialize(this, new AWSStartupHandler() {

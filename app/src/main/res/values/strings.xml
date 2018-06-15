@@ -40,5 +40,6 @@
         <item>WellsFargo</item>
         <item>Genentech</item>
     </string-array>
+    <string name="title_activity_podcast">PodcastActivity</string>
 
 </resources>
